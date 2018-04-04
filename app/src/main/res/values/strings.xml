@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Metro App</string>
+    <string name="enter_destination_station">Enter Destination Station</string>
+    <string name="find_trains">Find Trains</string>
+    <string name="enter_source_station">Enter Source Station</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

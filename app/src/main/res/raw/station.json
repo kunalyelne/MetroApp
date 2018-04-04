@@ -1,0 +1,648 @@
+{
+  "station": [
+    {
+      "code": 64,
+      "station": "ADARSH NAGAR"
+    },
+    {
+      "code": 99,
+      "station": "AIIMS"
+    },
+    {
+      "code": 67,
+      "station": "AKSHARDHAM"
+    },
+    {
+      "code": 81,
+      "station": "ANAND VIHAR"
+    },
+    {
+      "code": 108,
+      "station": "ARJANGARH"
+    },
+    {
+      "code": 82,
+      "station": "ASHOK PARK MAIN"
+    },
+    {
+      "code": 63,
+      "station": "AZADPUR"
+    },
+    {
+      "code": 130,
+      "station": "BADARPUR"
+    },
+    {
+      "code": 146,
+      "station": "BADKAL MOR"
+    },
+    {
+      "code": 28,
+      "station": "BARAKHAMBA"
+    },
+    {
+      "code": 149,
+      "station": "BATA CHOWK"
+    },
+    {
+      "code": 74,
+      "station": "BOTANICAL GARDEN"
+    },
+    {
+      "code": 56,
+      "station": "CENTRAL SECRETARIAT"
+    },
+    {
+      "code": 34,
+      "station": "CHANDNI CHOWK"
+    },
+    {
+      "code": 33,
+      "station": "CHAWRI BAZAR"
+    },
+    {
+      "code": 105,
+      "station": "CHHATTARPUR"
+    },
+    {
+      "code": 40,
+      "station": "CIVIL LINES"
+    },
+    {
+      "code": 139,
+      "station": "DELHI AERO CITY"
+    },
+    {
+      "code": 154,
+      "station": "DELHI GATE"
+    },
+    {
+      "code": 138,
+      "station": "DHAULA KUAN"
+    },
+    {
+      "code": 60,
+      "station": "DILSHAD GARDEN"
+    },
+    {
+      "code": 7,
+      "station": "DWARKA"
+    },
+    {
+      "code": 8,
+      "station": "DWARKA MOR"
+    },
+    {
+      "code": 2,
+      "station": "DWARKA SEC 10"
+    },
+    {
+      "code": 3,
+      "station": "DWARKA SEC 11"
+    },
+    {
+      "code": 4,
+      "station": "DWARKA SEC 12"
+    },
+    {
+      "code": 5,
+      "station": "DWARKA SEC 13"
+    },
+    {
+      "code": 6,
+      "station": "DWARKA SEC 14"
+    },
+    {
+      "code": 115,
+      "station": "DWARKA SEC 21"
+    },
+    {
+      "code": 114,
+      "station": "DWARKA SEC 8"
+    },
+    {
+      "code": 1,
+      "station": "DWARKA SEC 9"
+    },
+    {
+      "code": 150,
+      "station": "ESCORTS MUJESAR"
+    },
+    {
+      "code": 61,
+      "station": "G.T.B. NAGAR"
+    },
+    {
+      "code": 107,
+      "station": "GHITORNI"
+    },
+    {
+      "code": 75,
+      "station": "GOLF COURSE"
+    },
+    {
+      "code": 124,
+      "station": "GOVIND PURI"
+    },
+    {
+      "code": 100,
+      "station": "GREEN PARK"
+    },
+    {
+      "code": 109,
+      "station": "GURU DRONACHARYA"
+    },
+    {
+      "code": 151,
+      "station": "HAIDERPUR BADLI MOR"
+    },
+    {
+      "code": 101,
+      "station": "HAUZ KHAS"
+    },
+    {
+      "code": 113,
+      "station": "HUDA CITY CENTRE"
+    },
+    {
+      "code": 140,
+      "station": "I.G.I. AIRPORT"
+    },
+    {
+      "code": 112,
+      "station": "IFFCO CHOWK"
+    },
+    {
+      "code": 98,
+      "station": "INA"
+    },
+    {
+      "code": 46,
+      "station": "INDER LOK"
+    },
+    {
+      "code": 31,
+      "station": "INDRAPRASTHA"
+    },
+    {
+      "code": 141,
+      "station": "ITO"
+    },
+    {
+      "code": 65,
+      "station": "JAHANGIRPURI"
+    },
+    {
+      "code": 155,
+      "station": "JAMA MASJID"
+    },
+    {
+      "code": 161,
+      "station": "JAMIA MILIA ISLAMIYA"
+    },
+    {
+      "code": 13,
+      "station": "JANAK PURI EAST"
+    },
+    {
+      "code": 12,
+      "station": "JANAK PURI WEST"
+    },
+    {
+      "code": 118,
+      "station": "JANGPURA"
+    },
+    {
+      "code": 136,
+      "station": "JANPATH"
+    },
+    {
+      "code": 126,
+      "station": "JASOLA APOLLO"
+    },
+    {
+      "code": 159,
+      "station": "JASOLA VIHAR"
+    },
+    {
+      "code": 25,
+      "station": "JHANDEWALAN"
+    },
+    {
+      "code": 59,
+      "station": "JHIL MIL"
+    },
+    {
+      "code": 117,
+      "station": "JLN STADIUM"
+    },
+    {
+      "code": 97,
+      "station": "JORBAGH"
+    },
+    {
+      "code": 121,
+      "station": "KAILASH COLONY"
+    },
+    {
+      "code": 158,
+      "station": "KALINDI KUNJ"
+    },
+    {
+      "code": 123,
+      "station": "KALKAJI MANDIR"
+    },
+    {
+      "code": 47,
+      "station": "KANHAIYA NAGAR"
+    },
+    {
+      "code": 80,
+      "station": "KARKAR DUMA"
+    },
+    {
+      "code": 24,
+      "station": "KAROL BAGH"
+    },
+    {
+      "code": 35,
+      "station": "KASHMERE GATE"
+    },
+    {
+      "code": 131,
+      "station": "KAUSHAMBI"
+    },
+    {
+      "code": 48,
+      "station": "KESHAV PURAM"
+    },
+    {
+      "code": 116,
+      "station": "KHAN MARKET"
+    },
+    {
+      "code": 20,
+      "station": "KIRTI NAGAR"
+    },
+    {
+      "code": 50,
+      "station": "KOHAT ENCLAVE"
+    },
+    {
+      "code": 119,
+      "station": "LAJPAT NAGAR"
+    },
+    {
+      "code": 156,
+      "station": "LAL QUILA"
+    },
+    {
+      "code": 77,
+      "station": "LAXMI NAGAR"
+    },
+    {
+      "code": 96,
+      "station": "LOK KALYAN MARG"
+    },
+    {
+      "code": 111,
+      "station": "M G ROAD"
+    },
+    {
+      "code": 85,
+      "station": "MADI PUR"
+    },
+    {
+      "code": 102,
+      "station": "MALVIYA NAGAR"
+    },
+    {
+      "code": 29,
+      "station": "MANDI HOUSE"
+    },
+    {
+      "code": 58,
+      "station": "MANSAROVAR PARK"
+    },
+    {
+      "code": 68,
+      "station": "MAYUR VIHAR-I"
+    },
+    {
+      "code": 69,
+      "station": "MAYUR VIHAR-I EXT"
+    },
+    {
+      "code": 144,
+      "station": "MEWALA MAHARAJPUR"
+    },
+    {
+      "code": 62,
+      "station": "MODEL TOWN"
+    },
+    {
+      "code": 128,
+      "station": "MOHAN ESTATE"
+    },
+    {
+      "code": 120,
+      "station": "MOOLCHAND"
+    },
+    {
+      "code": 19,
+      "station": "MOTI NAGAR"
+    },
+    {
+      "code": 94,
+      "station": "MUNDKA"
+    },
+    {
+      "code": 91,
+      "station": "NANGLOI"
+    },
+    {
+      "code": 92,
+      "station": "NANGLOI RLY. STATION"
+    },
+    {
+      "code": 9,
+      "station": "NAWADA"
+    },
+    {
+      "code": 148,
+      "station": "NEELAM CHOWK AJRONDA"
+    },
+    {
+      "code": 122,
+      "station": "NEHRU PLACE"
+    },
+    {
+      "code": 49,
+      "station": "NETAJI SUBHASH PLACE"
+    },
+    {
+      "code": 70,
+      "station": "NEW ASHOK NAGAR"
+    },
+    {
+      "code": 32,
+      "station": "NEW DELHI"
+    },
+    {
+      "code": 143,
+      "station": "NHPC CHOWK"
+    },
+    {
+      "code": 78,
+      "station": "NIRMAN VIHAR"
+    },
+    {
+      "code": 76,
+      "station": "NOIDA CITY CENTRE"
+    },
+    {
+      "code": 71,
+      "station": "NOIDA SEC 15"
+    },
+    {
+      "code": 72,
+      "station": "NOIDA SEC 16"
+    },
+    {
+      "code": 73,
+      "station": "NOIDA SEC 18"
+    },
+    {
+      "code": 163,
+      "station": "NSIC OKHLA"
+    },
+    {
+      "code": 125,
+      "station": "OKHLA"
+    },
+    {
+      "code": 157,
+      "station": "OKHLA BIRD SANCTUARY"
+    },
+    {
+      "code": 160,
+      "station": "OKHLA VIHAR"
+    },
+    {
+      "code": 147,
+      "station": "OLD FARIDABAD"
+    },
+    {
+      "code": 86,
+      "station": "PASCHIM VIHAR (EAST)"
+    },
+    {
+      "code": 87,
+      "station": "PASCHIM VIHAR (WEST)"
+    },
+    {
+      "code": 55,
+      "station": "PATEL CHOWK"
+    },
+    {
+      "code": 22,
+      "station": "PATEL NAGAR"
+    },
+    {
+      "code": 88,
+      "station": "PEERA GARHI"
+    },
+    {
+      "code": 51,
+      "station": "PITAM PURA"
+    },
+    {
+      "code": 30,
+      "station": "PRAGATI MAIDAN"
+    },
+    {
+      "code": 45,
+      "station": "PRATAP NAGAR"
+    },
+    {
+      "code": 79,
+      "station": "PREET VIHAR"
+    },
+    {
+      "code": 44,
+      "station": "PUL BANGASH"
+    },
+    {
+      "code": 83,
+      "station": "PUNJABI BAGH"
+    },
+    {
+      "code": 104,
+      "station": "QUTAB MINAR"
+    },
+    {
+      "code": 93,
+      "station": "RAJDHANI PARK"
+    },
+    {
+      "code": 23,
+      "station": "RAJENDRA PLACE"
+    },
+    {
+      "code": 27,
+      "station": "RAJIV CHOWK"
+    },
+    {
+      "code": 17,
+      "station": "RAJOURI GARDEN"
+    },
+    {
+      "code": 18,
+      "station": "RAMESH NAGAR"
+    },
+    {
+      "code": 54,
+      "station": "RITHALA"
+    },
+    {
+      "code": 26,
+      "station": "RK ASHRAM MARG"
+    },
+    {
+      "code": 52,
+      "station": "ROHINI EAST"
+    },
+    {
+      "code": 152,
+      "station": "ROHINI SECTOR 18"
+    },
+    {
+      "code": 53,
+      "station": "ROHINI WEST"
+    },
+    {
+      "code": 103,
+      "station": "SAKET"
+    },
+    {
+      "code": 153,
+      "station": "SAMAYPUR BADLI"
+    },
+    {
+      "code": 142,
+      "station": "SARAI"
+    },
+    {
+      "code": 127,
+      "station": "SARITA VIHAR"
+    },
+    {
+      "code": 133,
+      "station": "SATGURU RAM SINGH MARG"
+    },
+    {
+      "code": 145,
+      "station": "SECTOR-28"
+    },
+    {
+      "code": 37,
+      "station": "SEELAMPUR"
+    },
+    {
+      "code": 21,
+      "station": "SHADIPUR"
+    },
+    {
+      "code": 39,
+      "station": "SHAHDARA"
+    },
+    {
+      "code": 57,
+      "station": "SHASTRI NAGAR"
+    },
+    {
+      "code": 36,
+      "station": "SHASTRI PARK"
+    },
+    {
+      "code": 84,
+      "station": "SHIVAJI PARK"
+    },
+    {
+      "code": 137,
+      "station": "SHIVAJI STADIUM"
+    },
+    {
+      "code": 110,
+      "station": "SIKANDARPUR"
+    },
+    {
+      "code": 15,
+      "station": "SUBHASH NAGAR"
+    },
+    {
+      "code": 162,
+      "station": "SUKHDEV VIHAR"
+    },
+    {
+      "code": 106,
+      "station": "SULTANPUR"
+    },
+    {
+      "code": 90,
+      "station": "SURAJMAL STADIUM"
+    },
+    {
+      "code": 16,
+      "station": "TAGORE GARDEN"
+    },
+    {
+      "code": 14,
+      "station": "TILAK NAGAR"
+    },
+    {
+      "code": 43,
+      "station": "TIS HAZARI"
+    },
+    {
+      "code": 129,
+      "station": "TUGHLAKABAD"
+    },
+    {
+      "code": 95,
+      "station": "UDYOG BHAWAN"
+    },
+    {
+      "code": 89,
+      "station": "UDYOG NAGAR"
+    },
+    {
+      "code": 11,
+      "station": "UTTAM NAGAR EAST"
+    },
+    {
+      "code": 10,
+      "station": "UTTAM NAGAR WEST"
+    },
+    {
+      "code": 132,
+      "station": "VAISHALI"
+    },
+    {
+      "code": 41,
+      "station": "VIDHAN SABHA"
+    },
+    {
+      "code": 42,
+      "station": "VISHWAVIDYALAYA"
+    },
+    {
+      "code": 38,
+      "station": "WELCOME"
+    },
+    {
+      "code": 66,
+      "station": "YAMUNA BANK"
+    }
+  ]
+}
