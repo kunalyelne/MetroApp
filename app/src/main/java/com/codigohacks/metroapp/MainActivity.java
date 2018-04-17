@@ -6,9 +6,12 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -26,10 +29,13 @@ import fr.ganfra.materialspinner.MaterialSpinner;
 public class MainActivity extends AppCompatActivity {
 
     MaterialSpinner fstation,dstation;
-    String item,undo=null;
+    String item1,item2,undo=null;
     String [] x={};
-    int pos=-1,pos2=-1;
+    int pos=-1,pos2=-1,src_code, dest_code;
+
+    Button submit;
     ArrayList<String> stat= new ArrayList<String>();
+    ArrayList<Integer> codes= new ArrayList<Integer>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
         fstation = (MaterialSpinner)findViewById(R.id.fstation);
         dstation = (MaterialSpinner)findViewById(R.id.dstation);
-        Button sub = (Button)findViewById(R.id.submit);
+        submit = (Button)findViewById(R.id.submit);
 
         InputStream is=getResources().openRawResource(R.raw.station);
         int size = 0;
@@ -123,8 +129,7 @@ public class MainActivity extends AppCompatActivity {
             for (int i = 0; i < m_jArry.length(); i++) {
                 JSONObject jo_inside = m_jArry.getJSONObject(i);
                 stat.add(jo_inside.getString("station"));
-                //STN[i]=(jo_inside.getString("station"));
-                //Add your values in your `ArrayList` as below:
+                codes.add(jo_inside.getInt("code"));
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -141,13 +146,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 // On selecting a spinner item
-                item = parent.getItemAtPosition(position).toString();
+                item1 = parent.getItemAtPosition(position).toString();
 
                 pos=position;
+                if(pos!=-1)
+                {
+                    src_code= codes.get(pos);
+                }
 
                 if (position!=-1) {
 
-                    Toast.makeText(MainActivity.this,"Selected:"+item,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"Selected:"+item1,Toast.LENGTH_SHORT).show();
 
                 }
                 else if(pos==pos2 && pos2!=-1 && pos!=-1)
@@ -172,13 +181,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 // On selecting a spinner item
-                item = parent.getItemAtPosition(position).toString();
+                item2 = parent.getItemAtPosition(position).toString();
 
                 pos2=position;
+                if(pos2!=-1)
+                {
+                    dest_code= codes.get(pos2);
+                }
 
                 if (position!=-1 && pos!=pos2) {
 
-                    Toast.makeText(MainActivity.this,"Selected:"+item,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"Selected:"+item2,Toast.LENGTH_SHORT).show();
 
                 }
                 else if(pos==pos2 && pos!=-1 && pos2!=-1)
@@ -196,17 +209,21 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        sub.setOnClickListener(new View.OnClickListener() {
+        submit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
+            public void onClick(View view) {
                 if (pos!=-1 && pos2!=-1) {
-                    ;
+
+                    Intent i = new Intent(MainActivity.this,Result.class);
+                    i.putExtra("src",item1);
+                    i.putExtra("des",item2);
+                    i.putExtra("src_code",src_code);
+                    i.putExtra("dest_code",dest_code);
+                    startActivity(i);
                 }
                 else {
                     Toast.makeText(MainActivity.this,"Please select Source and Destination",Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
     }
