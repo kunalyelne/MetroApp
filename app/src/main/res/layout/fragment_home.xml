@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back2"
+    tools:context="com.codigohacks.metroapp.HomeFragment">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:padding="10dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/from"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="Choose Station"
+                android:gravity="center_horizontal"
+                android:textColor="@color/lblue"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:textSize="20sp"/>
+
+            <fr.ganfra.materialspinner.MaterialSpinner
+                android:id="@+id/fstation"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                app:ms_multiline="true"
+                app:ms_arrowColor="#000"
+                app:ms_arrowSize="10dp"
+                app:ms_floatingLabelColor="@color/grey"
+                app:ms_floatingLabelText="From"
+                app:ms_hint="Source Station"
+                app:ms_hintColor="@color/lorange"/>
+
+
+            <fr.ganfra.materialspinner.MaterialSpinner
+                android:id="@+id/dstation"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                app:ms_multiline="true"
+                app:ms_arrowColor="#000"
+                app:ms_arrowSize="10dp"
+                app:ms_floatingLabelColor="@color/grey"
+                app:ms_floatingLabelText="To"
+                app:ms_hint="Destination Station"
+                app:ms_hintColor="@color/lorange"/>
+
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="60dp"
+                android:textColor="@color/white"
+                android:background="@drawable/button"
+                android:text="SUBMIT" />
+
+
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>

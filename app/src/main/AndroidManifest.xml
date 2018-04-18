@@ -22,24 +22,30 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBoNAeEP4McXcOKW9_MfkDkQ5-XJ89kUNM" />
 
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".IntroTour" />
         <activity android:name=".Delhi_site" />
         <activity android:name=".Home" />
         <activity android:name=".Result" />
         <activity android:name=".uber_test" />
-        <activity android:name=".InteractiveMap"></activity>
+        <activity android:name=".InteractiveMap" />
+        <activity android:name=".SplashScreen" />
+        <activity
+            android:name=".HomeNavigation"
+            android:label="@string/title_activity_home_navigation"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

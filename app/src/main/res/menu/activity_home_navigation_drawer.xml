@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_imap"
+            android:icon="@drawable/ic_map_black_24dp"
+            android:title="Interactive Map" />
+        <item
+            android:id="@+id/nav_nearbystat"
+            android:icon="@drawable/ic_pin_drop_black_24dp"
+            android:title="Nearest Stations" />
+        <item
+            android:id="@+id/nav_cabs"
+            android:icon="@drawable/ic_local_taxi_black_24dp"
+            android:title="Near By Cabs" />
+    </group>
+
+    <item android:title="Developers">
+        <menu>
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/about1"
+                android:title="About Us" />
+            <item
+                android:id="@+id/nav_contact"
+                android:icon="@drawable/ic_mail_black_24dp"
+                android:title="Contact Us" />
+        </menu>
+    </item>
+
+</menu>

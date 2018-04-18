@@ -1,17 +1,18 @@
 package com.codigohacks.metroapp;
 
+
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.webkit.WebChromeClient;
-import android.webkit.WebView;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.appus.splash.Splash;
@@ -24,12 +25,19 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.List;
 
 import fr.ganfra.materialspinner.MaterialSpinner;
 
-public class MainActivity extends AppCompatActivity {
 
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class HomeFragment extends Fragment {
+
+
+    public HomeFragment() {
+        // Required empty public constructor
+    }
     MaterialSpinner fstation,dstation;
     String item1,item2,undo=null;
     String [] x={};
@@ -38,24 +46,29 @@ public class MainActivity extends AppCompatActivity {
     Button submit;
     ArrayList<String> stat= new ArrayList<String>();
     ArrayList<Integer> codes= new ArrayList<Integer>();
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        Splash.Builder splash = new Splash.Builder(this,getSupportActionBar());
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+
+        Splash.Builder splash = new Splash.Builder(getActivity(),((AppCompatActivity)getActivity()).getSupportActionBar());
         splash.setBackgroundColor(getResources().getColor(R.color.orange));
         //splash.setBackgroundImage(getResources().getDrawable(R.drawable.back));
         splash.setSplashImage(getResources().getDrawable(R.mipmap.logo2));
         splash.setSplashImageColor(getResources().getColor(R.color.white));
         splash.perform();
+        getActivity().setTitle("Home");
+        View result = inflater.inflate(R.layout.fragment_home, container, false);
+
+
 
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
                 //  Initialize SharedPreferences
                 SharedPreferences getPrefs = PreferenceManager
-                        .getDefaultSharedPreferences(getBaseContext());
+                        .getDefaultSharedPreferences(getContext());
 
                 //  Create a new boolean and preference and set it to true
                 boolean isFirstStart = getPrefs.getBoolean("firstStart", true);
@@ -64,9 +77,9 @@ public class MainActivity extends AppCompatActivity {
                 if (isFirstStart) {
 
                     //  Launch app intro
-                    final Intent i = new Intent(MainActivity.this, IntroTour.class);
+                    final Intent i = new Intent(getContext(), IntroTour.class);
 
-                    runOnUiThread(new Runnable() {
+                    getActivity().runOnUiThread(new Runnable() {
                         @Override public void run() {
                             startActivity(i);
                         }
@@ -87,11 +100,9 @@ public class MainActivity extends AppCompatActivity {
         // Start the thread
         t.start();
 
-
-
-        fstation = (MaterialSpinner)findViewById(R.id.fstation);
-        dstation = (MaterialSpinner)findViewById(R.id.dstation);
-        submit = (Button)findViewById(R.id.submit);
+        fstation = (MaterialSpinner)result.findViewById(R.id.fstation);
+        dstation = (MaterialSpinner)result.findViewById(R.id.dstation);
+        submit = (Button)result.findViewById(R.id.submit);
 
         InputStream is=getResources().openRawResource(R.raw.station);
         int size = 0;
@@ -145,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
         }
         System.out.println(stat);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, stat);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, stat);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         fstation.setAdapter(adapter);
 
@@ -165,12 +176,12 @@ public class MainActivity extends AppCompatActivity {
 
                 if (position!=-1) {
 
-                    Toast.makeText(MainActivity.this,"Selected:"+item1,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(),"Selected:"+item1,Toast.LENGTH_SHORT).show();
 
                 }
                 else if(pos==pos2 && pos2!=-1 && pos!=-1)
                 {
-                    Toast.makeText(MainActivity.this,"Congrats Genius! You've reached your destination",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(),"Congrats Genius! You've reached your destination",Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -182,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, stat);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, stat);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dstation.setAdapter(adapter);
 
@@ -200,12 +211,12 @@ public class MainActivity extends AppCompatActivity {
 
                 if (position!=-1 && pos!=pos2) {
 
-                    Toast.makeText(MainActivity.this,"Selected:"+item2,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),"Selected:"+item2,Toast.LENGTH_SHORT).show();
 
                 }
                 else if(pos==pos2 && pos!=-1 && pos2!=-1)
                 {
-                    Toast.makeText(MainActivity.this,"Congrats Genius! You've reached your destination",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),"Congrats Genius! You've reached your destination",Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -223,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (pos!=-1 && pos2!=-1) {
 
-                    Intent i = new Intent(MainActivity.this,Result.class);
+                    Intent i = new Intent(getActivity(),Result.class);
                     i.putExtra("src",item1);
                     i.putExtra("des",item2);
                     i.putExtra("src_code",src_code);
@@ -231,11 +242,12 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(i);
                 }
                 else {
-                    Toast.makeText(MainActivity.this,"Please select Source and Destination",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),"Please select Source and Destination",Toast.LENGTH_SHORT).show();
                 }
             }
         });
-    }
 
+        return  result;
+    }
 
 }
