@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.codigohacks.metroapp.About2">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Developers"
+                    android:typeface="sans"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="40sp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:id="@+id/textView2" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_below="@+id/textView2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    app:srcCompat="@drawable/kyo3" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="Mayur Selukar"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/imageView2"/>
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/textView3"
+                    android:layout_marginTop="2dp"
+                    android:autoLink="phone"
+                    android:linksClickable="true"
+                    android:textColor="@color/lorange"
+                    android:text="Contact : +91-8669035180" />
+
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_below="@+id/textView4"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    app:srcCompat="@drawable/kyo" />
+
+                <TextView
+                    android:id="@+id/d2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="Kunal Yelne"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/imageView3"/>
+
+                <TextView
+                    android:id="@+id/mno2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/textView3"
+                    android:layout_marginTop="2dp"
+                    android:autoLink="phone"
+                    android:linksClickable="true"
+                    android:textColor="@color/lorange"
+                    android:text="Contact : +91-9960509901" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_below="@+id/d2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    app:srcCompat="@drawable/kyo3" />
+
+                <TextView
+                    android:id="@+id/d3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="Sanket Sinha"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/imageView4"/>
+
+                <TextView
+                    android:id="@+id/mno3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/d3"
+                    android:layout_marginTop="2dp"
+                    android:autoLink="phone"
+                    android:linksClickable="true"
+                    android:textColor="@color/lorange"
+                    android:text="Contact : +91-9823336059" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_below="@+id/d3"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    app:srcCompat="@drawable/kyo" />
+
+                <TextView
+                    android:id="@+id/d4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="Vaibhav Agasti"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/imageView5"/>
+
+                <TextView
+                    android:id="@+id/mno4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/d4"
+                    android:layout_marginTop="2dp"
+                    android:autoLink="phone"
+                    android:linksClickable="true"
+                    android:textColor="@color/lorange"
+                    android:text="Contact : +91-8830382623" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>
+
+

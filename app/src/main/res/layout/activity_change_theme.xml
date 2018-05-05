@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.codigohacks.metroapp.ChangeTheme">
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="26dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="33dp"
+        android:textSize="18sp"
+        android:textColor="@color/lblue"
+        android:textStyle="bold"
+        android:text="Change Theme" />
+
+    <ImageView
+        android:id="@+id/upic"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/textView21"
+        android:layout_alignStart="@+id/textView21"
+        android:layout_below="@+id/textView21"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_palette_black_24dp"/>
+
+
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/upic"
+        android:layout_alignStart="@+id/upic"
+        android:layout_below="@+id/upic"
+        android:textColor="@color/lblue"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="Notification" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/textView27"
+        android:layout_alignStart="@+id/textView27"
+        android:layout_below="@+id/textView27"
+        android:layout_marginTop="24dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/notification2"/>
+
+    <Switch
+        android:id="@+id/notification_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="2dp"
+        android:layout_alignBottom="@+id/imageView8"
+        android:layout_alignLeft="@+id/imageView8"
+        android:layout_alignStart="@+id/imageView8"
+        android:layout_marginBottom="20dp"
+        android:textSize="18sp"
+        android:text="Notifications" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView8"
+        android:layout_marginBottom="4dp"
+        android:layout_alignLeft="@+id/notification_switch"
+        android:layout_alignStart="@+id/notification_switch"
+        android:text="Updates/Events notifications" />
+
+    <Button
+        android:id="@+id/red_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView27"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_toEndOf="@+id/upic"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@color/red"
+        android:layout_toRightOf="@+id/upic"
+        android:text="RED" />
+
+    <Button
+        android:id="@+id/blue_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/red_theme"
+        android:layout_toEndOf="@+id/textView28"
+        android:layout_toRightOf="@+id/textView28"
+        android:textColor="@color/white"
+        android:background="@color/blue"
+        android:textStyle="bold"
+        android:text="Blue" />
+
+</RelativeLayout>

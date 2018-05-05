@@ -16,10 +16,7 @@
             android:id="@+id/nav_nearbystat"
             android:icon="@drawable/ic_pin_drop_black_24dp"
             android:title="Nearest Stations" />
-        <item
-            android:id="@+id/nav_cabs"
-            android:icon="@drawable/ic_local_taxi_black_24dp"
-            android:title="Near By Cabs" />
+
     </group>
 
     <item android:title="Developers">
@@ -28,10 +25,6 @@
                 android:id="@+id/nav_about"
                 android:icon="@drawable/about1"
                 android:title="About Us" />
-            <item
-                android:id="@+id/nav_contact"
-                android:icon="@drawable/ic_mail_black_24dp"
-                android:title="Contact Us" />
         </menu>
     </item>
 

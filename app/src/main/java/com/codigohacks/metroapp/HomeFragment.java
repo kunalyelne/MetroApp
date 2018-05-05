@@ -1,9 +1,17 @@
 package com.codigohacks.metroapp;
 
 
+import android.app.DownloadManager;
+import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -21,12 +29,17 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import fr.ganfra.materialspinner.MaterialSpinner;
+
+import static android.content.Context.DOWNLOAD_SERVICE;
 
 
 /**
@@ -39,9 +52,15 @@ public class HomeFragment extends Fragment {
         // Required empty public constructor
     }
     MaterialSpinner fstation,dstation;
-    String item1,item2,undo=null;
+    String item1,item2,undo=null,path;
     String [] x={};
     int pos=-1,pos2=-1,src_code, dest_code;
+
+    DownloadManager downloadManager;
+    Long reference;
+    private ProgressDialog mProgress;
+
+    File mydownload = new File (Environment.getExternalStorageDirectory()+ "/METRO");
 
     Button submit;
     ArrayList<String> stat= new ArrayList<String>();
@@ -100,11 +119,58 @@ public class HomeFragment extends Fragment {
         // Start the thread
         t.start();
 
+
+        if(!mydownload.exists()) {
+            mydownload.mkdir();//directory is created;
+        }
+        path = mydownload.getAbsolutePath() + "/routes.json" ;
+        File file = new File(path);
+        if (!file.exists()) {
+            mProgress = new ProgressDialog(getContext());
+            mProgress.setTitle("Processing...");
+            mProgress.setMessage("Please wait...");
+            mProgress.setCancelable(false);
+            mProgress.setIndeterminate(true);
+            mProgress.show();
+            downloadManager = (DownloadManager) getActivity().getSystemService(DOWNLOAD_SERVICE);
+            Uri uri = Uri.parse("https://www.codigohacks.com/metro/routes.json");
+            DownloadManager.Request request = new DownloadManager.Request(uri);
+            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+            request.setTitle("Important files");
+            request.setDestinationInExternalPublicDir("/METRO/", "routes.json");
+            reference = downloadManager.enqueue(request);
+            Toast.makeText(getContext(), "Downloading...", Toast.LENGTH_SHORT).show();
+
+            BroadcastReceiver receiver = new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    String action = intent.getAction();
+                    if (DownloadManager.ACTION_DOWNLOAD_COMPLETE.equals(action)) {
+                        long downloadId = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, 0);
+                        DownloadManager.Query query = new DownloadManager.Query();
+                        query.setFilterById(reference);
+                        downloadManager = (DownloadManager)context.getSystemService(DOWNLOAD_SERVICE);
+                        Cursor c = downloadManager.query(query);
+                        if (c.moveToFirst()) {
+                            int columnIndex = c.getColumnIndex(DownloadManager.COLUMN_STATUS);
+                            if (DownloadManager.STATUS_SUCCESSFUL == c.getInt(columnIndex)) {
+                                String uriString = c.getString(c.getColumnIndex(DownloadManager.COLUMN_LOCAL_URI));
+                                //TODO : Use this local uri and launch intent to open file
+                                mProgress.cancel();
+                            }
+                        }
+                    }
+                }
+            };
+            getActivity().registerReceiver(receiver, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+
+        }
         fstation = (MaterialSpinner)result.findViewById(R.id.fstation);
         dstation = (MaterialSpinner)result.findViewById(R.id.dstation);
         submit = (Button)result.findViewById(R.id.submit);
 
-        InputStream is=getResources().openRawResource(R.raw.station);
+        InputStream is= null;
+        is = getResources().openRawResource(R.raw.station);
         int size = 0;
         try {
             size = is.available();
@@ -250,4 +316,19 @@ public class HomeFragment extends Fragment {
         return  result;
     }
 
+    public String loadJSONFromAsset() {
+        String json = null;
+        try {
+            FileInputStream fis = new FileInputStream (new File(path));
+            int size = fis.available();
+            byte[] buffer = new byte[size];
+            fis.read(buffer);
+            fis.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
+    }
 }

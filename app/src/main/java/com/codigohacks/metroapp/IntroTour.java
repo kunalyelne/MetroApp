@@ -27,10 +27,9 @@ public class IntroTour extends AppIntro {
 
         // Instead of fragments, you can also use our default slide
         // Just set a title, description, background and image. AppIntro will do the rest.
-        addSlide(AppIntroFragment.newInstance("NAGPUR METRO", "Description1", R.mipmap.logo,Color.parseColor("#2196F3")));
-        addSlide(AppIntroFragment.newInstance("NAGPUR METRO", "Description2", R.mipmap.logo,Color.parseColor("#26C6DA")));
-        addSlide(AppIntroFragment.newInstance("NAGPUR METRO", "Description3", R.mipmap.logo,Color.parseColor("#F9A825")));
-        addSlide(AppIntroFragment.newInstance("NAGPUR METRO", "Description4", R.mipmap.logo,Color.parseColor("#00E676")));
+        addSlide(AppIntroFragment.newInstance("NAGPUR METRO", "Plan your journey", R.mipmap.logo,Color.parseColor("#2196F3")));
+        addSlide(AppIntroFragment.newInstance("NAGPUR METRO", "Book cabs to the source station", R.mipmap.logo,Color.parseColor("#26C6DA")));
+        addSlide(AppIntroFragment.newInstance("NAGPUR METRO", "Provides Route information", R.mipmap.logo,Color.parseColor("#F9A825")));
 
         // OPTIONAL METHODS
         // Override bar/separator color.

@@ -133,7 +133,7 @@
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="280dp"
         android:layout_below="@+id/display"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="31dp"
@@ -168,12 +168,11 @@
 
     <Button
         android:id="@+id/imap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/route"
-        android:layout_marginTop="14dp"
-        android:layout_toEndOf="@+id/imageView"
-        android:layout_toRightOf="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
         android:text="MAP" />
 
 

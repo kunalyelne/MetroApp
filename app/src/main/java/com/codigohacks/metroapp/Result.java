@@ -2,6 +2,7 @@ package com.codigohacks.metroapp;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,6 +17,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -30,9 +33,10 @@ public class Result extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     private List<Route_items> listItems;
     Button imap;
-    String s1,s2;
+    String s1,s2,path;
     int src_code,dest_code;
     ProgressDialog progressDialog ;
+    File mydownload = new File (Environment.getExternalStorageDirectory()+ "/METRO/");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +66,8 @@ public class Result extends AppCompatActivity {
         stops.setText("-");
         switches.setText("-");
 
+        path = mydownload.getAbsolutePath() + "/routes.json" ;
+
         listItems = new ArrayList<>();
         Intent intent = getIntent();
         s1=intent.getStringExtra("src");
@@ -82,46 +88,9 @@ public class Result extends AppCompatActivity {
         progressDialog.setMessage("Loading...");
         progressDialog.show();
         listItems.clear();
-        InputStream is=getResources().openRawResource(R.raw.routes);
-        int size = 0;
-        try {
-            size = is.available();
-            String STN;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        byte[] buffer = new byte[size];
-        try {
-            is.read(buffer);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            is.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        String json = null;
-        try {
-            json = new String(buffer, "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        JSONObject jsonObject = null;
-        try {
-            jsonObject = new JSONObject(json);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        JSONArray array = null;
-        try {
-            array = jsonObject.getJSONArray(String.valueOf(src_code));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
 
         try {
-            JSONObject obj = new JSONObject(json);
+            JSONObject obj = new JSONObject(loadJSONFromAsset());
             JSONArray m_jArry = obj.getJSONArray(String.valueOf(src_code));
 
             for (int i = 0; i < m_jArry.length(); i++) {
@@ -174,5 +143,20 @@ public class Result extends AppCompatActivity {
             e.printStackTrace();
         }
 
+    }
+    public String loadJSONFromAsset() {
+        String json = null;
+        try {
+            FileInputStream fis = new FileInputStream (new File(path));
+            int size = fis.available();
+            byte[] buffer = new byte[size];
+            fis.read(buffer);
+            fis.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
     }
 }

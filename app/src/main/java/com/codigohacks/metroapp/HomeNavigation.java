@@ -1,5 +1,6 @@
 package com.codigohacks.metroapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
@@ -90,7 +91,8 @@ public class HomeNavigation extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            Intent i = new Intent(HomeNavigation.this,ChangeTheme.class);
+            startActivity(i);
         }
 
         return super.onOptionsItemSelected(item);
@@ -112,14 +114,16 @@ public class HomeNavigation extends AppCompatActivity
             fragmentTransaction.commit();
         } else if (id == R.id.nav_imap) {
 
+            Intent i = new Intent(HomeNavigation.this,InteractiveMap.class);
+            startActivity(i);
+
         } else if (id == R.id.nav_nearbystat) {
 
-        } else if (id == R.id.nav_cabs) {
 
         } else if (id == R.id.nav_about) {
 
-        } else if (id == R.id.nav_contact) {
-
+            Intent i = new Intent(HomeNavigation.this,About2.class);
+            startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

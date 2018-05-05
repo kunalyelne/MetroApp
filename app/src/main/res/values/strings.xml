@@ -12,4 +12,15 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string-array name="themes">
+        <item>Theme1</item>
+        <item>Theme2</item>
+    </string-array>
+
+    <string name="OK">OK</string>
+    <string name="def_theme">Theme1</string>
+    <string name="theme_summary">Appearance</string>
+    <string name="theme_dialog_title">Theme</string>
+    <string name="settings">Settings</string>
 </resources>
